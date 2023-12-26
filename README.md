@@ -1,7 +1,7 @@
-Embedify
-==============================
+# Embedify
 
-A short description of the project.
+## Overview
+Embedify is a powerful toolkit for creating self-supervised word embeddings using cutting-edge techniques such as Word2Vec and FastText. This project empowers you to harness the latent semantic meaning within words, providing a foundation for natural language understanding in various applications.
 
 Project Organization
 ------------
@@ -54,4 +54,52 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+## Features
+- **Word2Vec and FastText Integration:** Choose between two leading algorithms for word embedding generation.
+- **Self-Supervised Learning:** Train embeddings without the need for labeled data, allowing for versatility across domains.
+- **Customizable Parameters:** Fine-tune hyperparameters to tailor embeddings to your specific use case.
+- **Scalability:** Efficiently process large datasets, ensuring scalability for diverse applications.
+
+## Getting Started
+1. **Clone the Repository:**
+   ```
+   git clone https://github.com/smn06/Embedify.git
+   cd Embedify
+   ```
+
+2. **Install Dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. **Configure Settings:**
+   Adjust configuration parameters in `config.yaml` to suit your requirements.
+
+4. **Training:**
+   ```
+   python train.py
+   ```
+
+5. **Evaluate Embeddings:**
+   Explore the trained embeddings using provided examples in the `notebooks` directory.
+
+## Example Usage
+```python
+from embedify import WordEmbeddings
+
+# Load pre-trained embeddings
+embeddings_model = WordEmbeddings.load_model("path/to/your/embeddings.model")
+
+# Get the embedding vector for a word
+vector = embeddings_model.get_embedding("example")
+
+# Find similar words
+similar_words = embeddings_model.most_similar("example_word", topn=5)
+print(similar_words)
+```
+
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
